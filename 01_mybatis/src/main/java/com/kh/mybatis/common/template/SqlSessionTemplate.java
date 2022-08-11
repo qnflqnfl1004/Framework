@@ -11,9 +11,9 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 public class SqlSessionTemplate {
 	public static SqlSession getSession() {
 		SqlSession session = null;
+		InputStream is = null;
 		SqlSessionFactoryBuilder builder = null;
 		SqlSessionFactory factory = null;
-		InputStream is = null;
 		
 		try {
 			// SqlSession 객체 생성하기
@@ -27,9 +27,8 @@ public class SqlSessionTemplate {
 //			factory = builder.build(is, "kh");
 			
 			// 3. SqlSession 객체 생성 (true: 오토 커밋, false: 수동 커밋)
-			session = factory.openSession(false);
+			session = factory.openSession(false);			
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
