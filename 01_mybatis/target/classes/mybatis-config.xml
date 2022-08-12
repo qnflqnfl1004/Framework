@@ -14,6 +14,7 @@
 	
 	<typeAliases>
 		<typeAlias type="com.kh.mybatis.member.model.vo.Member" alias="Member"/>
+		<typeAlias type="com.kh.mybatis.board.model.vo.Board" alias="Board"/>
 	</typeAliases>
 	
 	<!-- 
@@ -47,5 +48,6 @@
 	<!-- 연결된 DB에서 사용하는 쿼리문을 담는 Mapper 파일을 등록하는 요소 -->
 	<mappers>
 		<mapper resource="mappers/member/member-mapper.xml"/>
+		<mapper resource="mappers/board/board-mapper.xml"/>
 	</mappers>
 </configuration>
