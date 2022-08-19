@@ -9,8 +9,21 @@ public interface BoardService {
 
 	int getBoardCount();
 	
+	int getBoardCount(String writer, String title, String content);
+	
+	int getBoardCount(String[] filters);
+	
 	List<Board> findAll(PageInfo pageInfo);
 
-	List<Board> findAll(String writer, String title, String content);
+	List<Board> findAll(PageInfo pageInfo, String writer, String title, String content);
+
+	List<Board> findAll(PageInfo pageInfo, String[] filters);
+
+	Board findBoardByNo(int no);
+
+	int save(Board board);
+
+	int delete(int no);
+
 
 }

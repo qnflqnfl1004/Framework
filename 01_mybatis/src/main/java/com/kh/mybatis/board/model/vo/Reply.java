@@ -1,5 +1,7 @@
 package com.kh.mybatis.board.model.vo;
 
+import java.util.Date;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,7 +20,7 @@ public class Reply {
 	
 	private String content;	
 	
-	private Data createDate;
+	private Date createDate;
 	
-	private Data modifyDate;
+	private Date modifyDate;
 }

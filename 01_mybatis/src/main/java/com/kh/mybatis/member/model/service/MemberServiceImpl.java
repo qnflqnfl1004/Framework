@@ -6,15 +6,19 @@ import com.kh.mybatis.member.model.dao.MemberDao;
 import com.kh.mybatis.member.model.dao.MemberDaoImpl;
 import com.kh.mybatis.member.model.vo.Member;
 
+import lombok.extern.slf4j.Slf4j;
+
 import static com.kh.mybatis.common.template.SqlSessionTemplate.*;
 
 import java.util.List;
 
+@Slf4j
 public class MemberServiceImpl implements MemberService {
 	private MemberDao dao = new MemberDaoImpl();
 
 	@Override
 	public int getMemberCount() {
+		log.info("getMemberCount() - 호출");
 		int count = 0;
 		SqlSession session = getSession();
 		
@@ -27,6 +31,7 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public List<Member> findAll() {
+		log.debug("findAll() - 호출");
 		List<Member> members = null;
 		SqlSession session = getSession();
 		
