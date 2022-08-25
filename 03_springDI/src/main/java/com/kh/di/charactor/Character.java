@@ -4,11 +4,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Component;
 
 import com.kh.di.weapon.Weapon;
 
+import lombok.Getter;
 import lombok.ToString;
 
 /*
@@ -17,10 +19,15 @@ import lombok.ToString;
  * 1. @PropertySource()을 사용하는 방법
  * 	- Environment 객체를 사용해서 character.properties에 설정된 값을 읽어온다.
  * 	- 스프링 프로퍼티 플레이스 홀더를 사용해서 character.properties에 설정된 값을 읽어온다.(${키:기본값})
+ * 
+ * 2. @PropertySource()을 생략하는 방법
+ * 	- XML 설정 파일을 사용하는 경우 <context:property-placeholder/>를 추가한다.
+ * 	- Java 설정 파일을 사용하는 경우 PropertySourcesPlaceholderConfigurer 빈을 등록한다.
  */
 @Component
 @ToString
-@PropertySource("classpath:character.properties")
+@Getter
+// @PropertySource("classpath:character.properties")
 public class Character {
 	@Value("${character.name:홍길동}")
 	private String name;

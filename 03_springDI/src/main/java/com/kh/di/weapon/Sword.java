@@ -10,7 +10,7 @@ import lombok.ToString;
 @Primary
 @ToString
 public class Sword implements Weapon {
-	@Value("집행검")
+	@Value("${character.weapon.name:집행검}")
 	private String name;
 	
 	@Override
