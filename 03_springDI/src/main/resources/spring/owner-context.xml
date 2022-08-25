@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- 
+	Owner owner = new Owner("신영은", 29, dog);
+	
+	<bean id="ss" class="com.kh.di.owner.Owner">
+		<constructor-arg name="name" value="신영은"/>
+		<constructor-arg name="age" value="29"/>
+		<constructor-arg name="pet" ref="dog"/>
+	</bean>
+	 <bean id="ss" class="com.kh.di.owner.Owner">
+		<constructor-arg index="0" value="신영은"/>
+		<constructor-arg index="1" value="29"/>
+		<constructor-arg index="2" ref="dog"/>
+	</bean>
+	 
+	 <bean id="ss" class="com.kh.di.owner.Owner" c:name="신영은" c:age="29" c:pet-ref="dog"/>
+	 -->
+	 <bean id="ss" class="com.kh.di.owner.Owner" c:_0="신영은" c:_1="29" c:_2-ref="dog"/>
+	 
+	<!-- 
+	Owner owner = new Ownser();
+	
+	owner.setName("홍길동");
+	owner.setAge("24");
+	owner.setPat(cat);
+	 <bean id="hong" class="com.kh.di.owner.Owner">
+	 	<property name="name" value="홍길동"/>
+	 	<property name="age" value="24"/>
+	 	<property name="pet" ref="cat"/>
+	 </bean>
+	 -->
+	<bean id="hong" class="com.kh.di.owner.Owner" p:name="홍길동" p:age="24" p:pet-ref="cat"/>
+</beans>
+
