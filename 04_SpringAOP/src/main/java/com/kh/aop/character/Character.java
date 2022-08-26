@@ -14,9 +14,9 @@ public class Character {
 	
 	public String quest(String questName) throws Exception {
 		
-		if(true) {
-			throw new Exception("Quest 처리 중 예외 발생");
-		}
+//		if(true) {
+//			throw new Exception("Quest 처리 중 예외 발생");
+//		}
 		
 		System.out.println(questName + " 퀘스트 진행 중..");;
 		
