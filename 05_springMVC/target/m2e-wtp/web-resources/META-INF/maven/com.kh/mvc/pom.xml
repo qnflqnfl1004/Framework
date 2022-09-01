@@ -10,6 +10,7 @@
 	<properties>
 		<java-version>11</java-version>
 		<org.springframework-version>5.2.22.RELEASE</org.springframework-version>
+		<org.springsecurity-version>5.7.3</org.springsecurity-version>
 		<org.aspectj-version>1.9.9.1</org.aspectj-version>
 		<org.slf4j-version>1.6.6</org.slf4j-version>
 	</properties>
@@ -27,6 +28,7 @@
 				 </exclusion>
 			</exclusions>
 		</dependency>
+		
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
@@ -35,9 +37,34 @@
 		
 		<dependency>
 		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-jdbc</artifactId>
+		    <version>${org.springframework-version}</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.springframework</groupId>
 		    <artifactId>spring-test</artifactId>
 		    <version>${org.springframework-version}</version>
 		    <scope>test</scope>
+		</dependency>
+		
+		<!-- Spring Security -->
+		<dependency>
+		    <groupId>org.springframework.security</groupId>
+		    <artifactId>spring-security-core</artifactId>
+		    <version>${org.springsecurity-version}</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.springframework.security</groupId>
+		    <artifactId>spring-security-web</artifactId>
+		    <version>${org.springsecurity-version}</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.springframework.security</groupId>
+		    <artifactId>spring-security-config</artifactId>
+		    <version>${org.springsecurity-version}</version>
 		</dependency>
 				
 		<!-- AspectJ -->
@@ -123,7 +150,7 @@
 		    <artifactId>taglibs-standard-impl</artifactId>
 		    <version>1.2.5</version>
 		</dependency>
-		
+
 		<dependency>
 		    <groupId>org.apache.taglibs</groupId>
 		    <artifactId>taglibs-standard-spec</artifactId>
@@ -140,8 +167,35 @@
 		    <groupId>org.apache.taglibs</groupId>
 		    <artifactId>taglibs-standard-compat</artifactId>
 		    <version>1.2.5</version>
+		</dependency>	
+		
+		<!-- DB 관련 라이브러리 -->
+		<dependency>
+		    <groupId>com.oracle.database.jdbc</groupId>
+		    <artifactId>ojdbc6</artifactId>
+		    <version>11.2.0.4</version>
 		</dependency>
-	
+	  
+		<dependency>
+		    <groupId>org.mybatis</groupId>
+		    <artifactId>mybatis</artifactId>
+		    <version>3.5.10</version>
+		</dependency>
+			
+		<!-- 스프링에서 mybatis를 사용하기 위한 라이브러리 -->
+		<dependency>
+		    <groupId>org.mybatis</groupId>
+		    <artifactId>mybatis-spring</artifactId>
+		    <version>2.0.7</version>
+		</dependency>
+		
+		<!-- 커넥션 풀 기능을 사용하기 위한 라이브러리 -->
+		<dependency>
+		    <groupId>org.apache.commons</groupId>
+		    <artifactId>commons-dbcp2</artifactId>
+		    <version>2.9.0</version>
+		</dependency>
+		
 		<!-- lombok -->
 		<dependency>
 		    <groupId>org.projectlombok</groupId>
@@ -150,6 +204,13 @@
 		    <scope>provided</scope>
 		</dependency>
 		
+		<dependency>
+		    <groupId>com.fasterxml.jackson.core</groupId>
+		    <artifactId>jackson-databind</artifactId>
+		    <version>2.13.3</version>
+		</dependency>
+		
+		
 		<!-- Test -->
 		<dependency>
 		    <groupId>org.junit.jupiter</groupId>
@@ -157,7 +218,7 @@
 		    <version>5.9.0</version>
 		    <scope>test</scope>
 		</dependency>
-		
+	
 		<dependency>
 		    <groupId>org.junit.jupiter</groupId>
 		    <artifactId>junit-jupiter-params</artifactId>
@@ -170,7 +231,7 @@
 		    <artifactId>assertj-core</artifactId>
 		    <version>3.23.1</version>
 		    <scope>test</scope>
-		</dependency>       
+		</dependency>              
 	</dependencies>
     <build>
         <plugins>
